@@ -12,6 +12,11 @@ jobs:
         run: cowsay -f dragon "i am dangerous run away" >> dragon.txt
       - name: read-file
         run: cat dragon.txt
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: myartifacts
+          path: dragon.txt
     
 
   # test_job:
