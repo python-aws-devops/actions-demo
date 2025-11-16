@@ -8,6 +8,6 @@ jobs:
         #   uses: actions/checkout@v5
         - name: run script
           run: |
-            sudo chmod +x
+            sudo chmod +x basic.sh
             ./basic.sh
 
