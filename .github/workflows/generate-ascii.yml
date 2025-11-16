@@ -1,0 +1,13 @@
+name: ascii generator
+on: push
+jobs:
+    generate-ascii:
+        runs-on: ubuntu-latest
+        steps:
+        - name: actionscheckout
+          uses: actions/checkout@v5
+        - name: generate ascii
+          run: |
+            sudo apt-get install cowsay -y
+            cowsay -f dragon " I am a dragon, run for cover roar.." >> dragon.txt
+
