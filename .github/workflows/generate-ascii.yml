@@ -6,8 +6,10 @@ jobs:
         steps:
         - name: actionscheckout
           uses: actions/checkout@v5
+        - name: list files
+          run: ls -lstra
         - name: run script
           run: |
-            sudo chmod +x ./basic.sh
+            chmod +x basic.sh
             ./basic.sh
 
