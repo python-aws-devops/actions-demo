@@ -16,4 +16,4 @@ jobs:
           run: ls -lstra
         
         - name: read-file
-          run: cat ../../README.md
+          run: cat README.md
