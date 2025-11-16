@@ -4,8 +4,8 @@ jobs:
     generate-ascii:
         runs-on: ubuntu-latest
         steps:
-        # - name: actionscheckout
-        #   uses: actions/checkout@v5
+        - name: actionscheckout
+          uses: actions/checkout@v5
         - name: run script
           run: |
             sudo chmod +x basic.sh
