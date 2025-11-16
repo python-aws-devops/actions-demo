@@ -5,7 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo text
-        run: echo "This is build job"  
+        run: echo "This is build job"
+      - name: install dependencies
+        run: sudo apt-get install cowsay -y
+      - name: Generate ascii artwork
+        run: cowsay -f dragon "i am dangerous run away" >> dragon.txt
+      - name: read-file
+        run: cat dragon.txt
     
 
   # test_job:
