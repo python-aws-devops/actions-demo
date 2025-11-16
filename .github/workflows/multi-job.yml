@@ -31,7 +31,7 @@ jobs:
         run: cat dragon.txt
 
   deploy_job:
-    needs: build_job
+    needs: test_job
     runs-on: ubuntu-latest
     steps:
       - name: download-artifacts
