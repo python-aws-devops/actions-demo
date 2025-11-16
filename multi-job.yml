@@ -1,0 +1,12 @@
+name: multijob pipeline
+on: push
+jobs:
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo text
+        run: echo "This is build job"  
+    
+
+  # test_job:
+  # deploy_job:
