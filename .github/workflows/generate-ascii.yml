@@ -4,12 +4,10 @@ jobs:
     generate-ascii:
         runs-on: ubuntu-latest
         steps:
-        - name: actionscheckout
-          uses: actions/checkout@v5
-        - name: generate ascii
+        # - name: actionscheckout
+        #   uses: actions/checkout@v5
+        - name: run script
           run: |
-            sudo apt-get install cowsay -y
-            cowsay -f dragon " I am a dragon, run for cover roar.." >> dragon.txt
-        - name : read-file
-          run: cat dragon.txt
+            sudo chmod +x
+            ./basic.sh
 
