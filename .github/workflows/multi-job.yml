@@ -26,7 +26,7 @@ jobs:
       - name: download artifacts
         uses:  actions/download-artifact@v5
         with:
-          name: dragon.txt
+          name: myartifacts
       - name: read-file
         run: cat dragon.txt
 
