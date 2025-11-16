@@ -6,7 +6,9 @@ jobs:
         runs-on: ubuntu-latest
         
         steps:
-        - uses: actions/checkout@v5
+        - name: checkout
+          uses: actions/checkout@v5
+        
         - name: print something
           run: echo "welcome to GIT-HUB ACTIONS"
         
