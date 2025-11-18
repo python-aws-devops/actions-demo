@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo text
-        run: echo "This is build job"
+        run: echo "This is build job" --username ${{vars.username}} --password ${{secrets.password}}
       - name: install dependencies
         run: sudo apt-get install cowsay -y
       - name: Generate ascii artwork
@@ -30,7 +30,9 @@ jobs:
         with:
           name: myartifacts
       - name: read-file
-        run: cat dragon.txt
+        run: |
+         cat dragon.txt
+         echo "test_job_running" --username ${{vars.username}} --password ${{secrets.password}}
 
   deploy_job:
     needs: test_job
@@ -41,4 +43,6 @@ jobs:
         with:
           name: myartifacts
       - name: find pattern 
-        run: grep -i "dangerous" dragon.txt
+        run: | 
+          grep -i "dangerous" dragon.txt
+          echo "job completed" --username ${{vars.username}} --password ${{secrets.password}}
