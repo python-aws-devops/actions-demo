@@ -2,6 +2,7 @@ name: multijob pipeline
 on: 
    - push
    - workflow_dispatch
+
 jobs:
   build_job:
     runs-on: ubuntu-latest
@@ -33,6 +34,9 @@ jobs:
         run: |
          cat dragon.txt
          echo "test_job_running" --username ${{vars.username}} --password ${{secrets.password}}
+        
+          
+
 
   deploy_job:
     needs: test_job
@@ -46,3 +50,4 @@ jobs:
         run: | 
           grep -i "dangerous" dragon.txt
           echo "job completed" --username ${{vars.username}} --password ${{secrets.password}}
+          sleep 600s
