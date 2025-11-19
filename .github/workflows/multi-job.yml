@@ -17,12 +17,14 @@ jobs:
         include:
         - os: ubuntu-latest
           cmd: git -v
-    runs-on: ubunt
+    runs-on: ${{matrix.os}}
     steps:
       - name: echo text
         run: echo "This is build job" --username ${{vars.username}} --password ${{secrets.password}}
       - name: install dependencies
-        run: sudo apt-get install cowsay -y
+        run: |
+          sudo apt-get install cowsay -y
+          ${{matrix.cmd}}
       - name: Generate ascii artwork
         run: cowsay -f dragon "i am dangerous run away" >> dragon.txt
       - name: read-file
