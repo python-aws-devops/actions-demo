@@ -67,4 +67,3 @@ jobs:
         run: | 
           grep -i "dangerous" dragon.txt
           echo "job completed" --username ${{vars.username}} --password ${{secrets.password}}
-          sleep 600s
