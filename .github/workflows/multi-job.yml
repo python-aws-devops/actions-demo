@@ -5,7 +5,19 @@ on:
 
 jobs:
   build_job:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        os: [ubuntu-latest, ubuntu-22.4, windows-2022]
+        cmd: [pwd, ipconfig]
+        exclude:
+        - os: windows-2022
+          cmd: pwd
+        include:
+        - os: ubuntu-latest
+          cmd: git -v
+    runs-on: ubunt
     steps:
       - name: echo text
         run: echo "This is build job" --username ${{vars.username}} --password ${{secrets.password}}
